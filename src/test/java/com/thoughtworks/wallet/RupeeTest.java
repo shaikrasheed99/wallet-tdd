@@ -33,4 +33,12 @@ public class RupeeTest {
 
         assertEquals(20, expectedRupee.value());
     }
+
+    @Test
+    void shouldEquateTwoRupeeObjectsWhenSameValueIsGiven() throws NegativeAmountException {
+        Rupee rupeeOne = new Rupee(10);
+        Rupee rupeeTwo = new Rupee(10);
+
+        assertEquals(rupeeOne, rupeeTwo);
+    }
 }
