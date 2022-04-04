@@ -1,7 +1,5 @@
 package com.thoughtworks.wallet;
 
-import com.thoughtworks.wallet.exceptions.NegativeAmountException;
-
 public class Wallet {
     private int amount;
 
@@ -9,8 +7,7 @@ public class Wallet {
         this.amount = 0;
     }
 
-    public void add(int amount) throws NegativeAmountException {
-        if (amount < 0) throw new NegativeAmountException();
+    public void add(int amount) {
         this.amount = amount;
     }
 
