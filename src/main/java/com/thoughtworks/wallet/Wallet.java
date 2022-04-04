@@ -3,17 +3,17 @@ package com.thoughtworks.wallet;
 import com.thoughtworks.wallet.exceptions.NegativeAmountException;
 
 public class Wallet {
-    private Rupee amount;
+    private Money amount;
 
     public Wallet() throws NegativeAmountException {
-        this.amount = new Rupee(0);
+        this.amount = new Money(0, Currency.RUPEE);
     }
 
-    public void add(Rupee amount) throws NegativeAmountException {
+    public void add(Money amount) throws NegativeAmountException {
         this.amount = this.amount.add(amount);
     }
 
-    public Rupee balance() {
+    public Money balance() {
         return amount;
     }
 }

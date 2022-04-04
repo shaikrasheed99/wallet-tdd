@@ -9,12 +9,12 @@ public class WalletTest {
     @Test
     void shouldAddMoneyToWalletWhenAmountIsGiven() throws NegativeAmountException {
         Wallet wallet = new Wallet();
-        Rupee rupee = new Rupee(20);
-        Rupee expectedRupee = new Rupee(40);
+        Money rupee = new Money(20, Currency.RUPEE);
+        Money expectedRupee = new Money(40, Currency.DOLLAR);
 
         wallet.add(rupee);
         wallet.add(rupee);
-        Rupee balance = wallet.balance();
+        Money balance = wallet.balance();
 
         assertEquals(expectedRupee, balance);
     }
