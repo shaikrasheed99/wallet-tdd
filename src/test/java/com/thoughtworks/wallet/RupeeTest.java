@@ -12,9 +12,7 @@ public class RupeeTest {
         int amount = 10;
         Rupee rupee = new Rupee(amount);
 
-        int value = rupee.value();
-
-        assertEquals(10, value);
+        assertEquals(new Rupee(10), rupee);
     }
 
     @Test
@@ -28,10 +26,11 @@ public class RupeeTest {
     void shouldAbleToAddOneRupeeWhenAnotherRupeeIsGiven() throws NegativeAmountException {
         Rupee rupeeOne = new Rupee(10);
         Rupee rupeeTwo = new Rupee(10);
+        Rupee expectedRupee = new Rupee(20);
 
-        Rupee expectedRupee = rupeeOne.add(rupeeTwo);
+        Rupee actualRupee = rupeeOne.add(rupeeTwo);
 
-        assertEquals(20, expectedRupee.value());
+        assertEquals(expectedRupee, actualRupee);
     }
 
     @Test

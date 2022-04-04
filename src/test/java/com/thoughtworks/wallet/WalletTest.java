@@ -8,13 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class WalletTest {
     @Test
     void shouldAddMoneyToWalletWhenAmountIsGiven() throws NegativeAmountException {
-        int amount = 20;
         Wallet wallet = new Wallet();
-        Rupee rupee = new Rupee(amount);
+        Rupee rupee = new Rupee(20);
+        Rupee expectedRupee = new Rupee(40);
 
+        wallet.add(rupee);
         wallet.add(rupee);
         Rupee balance = wallet.balance();
 
-        assertEquals(20, balance.value());
+        assertEquals(expectedRupee, balance);
     }
 }
