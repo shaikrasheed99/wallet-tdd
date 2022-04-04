@@ -13,4 +13,8 @@ public class Rupee {
     public int value() {
         return value;
     }
+
+    public Rupee add(Rupee amount) throws NegativeAmountException {
+        return new Rupee(value + amount.value);
+    }
 }

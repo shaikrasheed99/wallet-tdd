@@ -23,4 +23,14 @@ public class RupeeTest {
 
         assertThrows(NegativeAmountException.class, () -> new Rupee(amount));
     }
+
+    @Test
+    void shouldAbleToAddOneRupeeWhenAnotherRupeeIsGiven() throws NegativeAmountException {
+        Rupee rupeeOne = new Rupee(10);
+        Rupee rupeeTwo = new Rupee(10);
+
+        Rupee expectedRupee = rupeeOne.add(rupeeTwo);
+
+        assertEquals(20, expectedRupee.value());
+    }
 }

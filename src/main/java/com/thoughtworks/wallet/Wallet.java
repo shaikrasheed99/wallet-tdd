@@ -9,8 +9,8 @@ public class Wallet {
         this.amount = new Rupee(0);
     }
 
-    public void add(Rupee amount) {
-        this.amount = amount;
+    public void add(Rupee amount) throws NegativeAmountException {
+        this.amount = this.amount.add(amount);
     }
 
     public Rupee balance() {
