@@ -14,8 +14,9 @@ public class Money {
         this.currency = currency;
     }
 
-    public Money add(Money amount) throws NegativeAmountException {
-        return new Money(value + amount.value, currency);
+    public Money add(Money other) throws NegativeAmountException {
+        int baseRupee = other.currency.covertToBase(other.value);
+        return new Money(value + baseRupee, currency);
     }
 
     @Override
